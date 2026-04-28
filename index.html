@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e8bb486c33c2d481aa0f247b268cba56.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-40a59707361c69812bb7ca3fed5e927a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c54a949a59522e2481a9fd282807c34.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,12 +109,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Citation</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025220-source-pdf.pdf"> 
-<span class="menu-text">Paper (PDF)</span></a>
-  </li>  
-</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -165,20 +159,22 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </section>
 
-<!-- meta strip -->
-<div class="meta-strip">
-  <div class="site-container">
-    <div class="meta-inner">
-      <span class="badge-updated">✓ &nbsp;Updated through October 2025</span>
-      <span class="meta-authors">
-        <!-- TODO: wrap each name in <a href="[url]"> when personal pages available -->
-        Samuele Centorrino &nbsp;·&nbsp; Antonia Diakantoni &nbsp;·&nbsp;
-        Alexander Keck &nbsp;·&nbsp; Michele Ruta &nbsp;·&nbsp;
-        Monika Sztajerowska &nbsp;·&nbsp; Yuting Wei
-      </span>
-    </div>
-  </div>
-</div>
+<script>
+// Transparent navbar → solid navy on scroll
+(function() {
+  var navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  function onScroll() {
+    if (window.scrollY > 60) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 
 
 <!-- ═══ ABOUT ══════════════════════════════════════════════════════════════ -->
@@ -303,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><strong>TPA Index Data</strong></td>
-<td>Full dataset — Sheet 1 (normalized) and Sheet 2 (unnormalized), Jan 2010–Oct 2025</td>
+<td>Full dataset — Sheet 1 (normalized) and Sheet 2 (unnormalized) [updated through October 2025]</td>
 <td><span class="fmt-badge fmt-xlsx">XLSX</span></td>
 <td><a href="data/TPA_index_data.xlsx" class="dl-btn">Download</a></td>
 </tr>
@@ -361,30 +357,29 @@ ul.task-list li input[type="checkbox"] {
 
     <h2 class="section-heading anchored" style="margin-top:2.8rem;">Authors</h2>
     <div class="author-list">
-      <!-- TODO: Replace .author-name spans with <a href="[url]" class="author-name"> once personal pages available -->
       <div class="author-item">
-        <span class="author-name">Samuele Centorrino</span>
+        <a href="https://sites.google.com/site/samuelecentorrino/" class="author-name" target="_blank">Samuele Centorrino</a>
         <span class="author-affil">International Monetary Fund</span>
       </div>
       <div class="author-item">
-        <span class="author-name">Antonia Diakantoni</span>
+        <a href="https://www.researchgate.net/profile/Antonia-Diakantoni-2" class="author-name" target="_blank">Antonia Diakantoni</a>
         <span class="author-affil">World Trade Organization</span>
       </div>
       <div class="author-item">
-        <span class="author-name">Alexander Keck</span>
+        <a href="https://www.researchgate.net/scientific-contributions/Alexander-Keck-2123812392" class="author-name" target="_blank">Alexander Keck</a>
         <span class="author-affil">World Trade Organization</span>
       </div>
       <div class="author-item">
-        <span class="author-name">Michele Ruta</span>
+        <a href="https://sites.google.com/site/michelerutasite/michele-ruta" class="author-name" target="_blank">Michele Ruta</a>
         <span class="author-affil">International Monetary Fund</span>
       </div>
       <div class="author-item">
-        <span class="author-name">Monika Sztajerowska</span>
+        <a href="https://www.monikasztajerowska.com/" class="author-name" target="_blank">Monika Sztajerowska</a>
         <span class="author-affil">International Monetary Fund</span>
       </div>
       <div class="author-item">
-        <span class="author-name">Yuting Wei</span>
-        <span class="author-affil">International Monetary Fund</span>
+        <a href="https://sites.google.com/view/yuting-wei/" class="author-name" target="_blank">Yuting Wei</a>
+        <span class="author-affil">Bocconi University</span>
       </div>
     </div>
 
@@ -935,14 +930,14 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025 Centorrino, Diakantoni, Keck, Ruta, Sztajerowska, Wei · IMF Working Paper 2025/220</p>
+<p>© 2025 Centorrino, Diakantoni, Keck, Ruta, Sztajerowska, Wei · IMF Working Paper 2025/220 · Views expressed are those of the authors, not the IMF.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Views expressed are those of the authors, not the IMF.</p>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 
